@@ -1,4 +1,6 @@
-/*Find total number of Squares in a N*N chessboard*/
+/*Find total number of Squares in a N*N chessboard
+https://practice.geeksforgeeks.org/problems/squares-in-nn-chessboard1801/1#
+*/
 class Solution {
     static Long squaresInChessBoard(Long N) {
         Long ans=0L;
