@@ -1,4 +1,4 @@
-/*https://leetcode.com/problems/minimum-size-subarray-sum/submissions/*
+/*https://leetcode.com/problems/minimum-size-subarray-sum/submissions/ */
 class Solution {
     public int minSubArrayLen(int target, int[] nums) {
         
