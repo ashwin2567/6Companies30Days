@@ -1,28 +1,19 @@
 /*https://practice.geeksforgeeks.org/problems/maximum-profit4657/1*/
 class Solution {
-    static int maxProfit(int k, int n, int a[]) {
-        int dp[][]=new int[k+1][n+1];
-        for(int i=0;i<n;i++)
+    public int maxProfit(int k, int[] prices) {
+        int n = prices.length;
+         if(k==0 || n==0)
+            return 0;
+        int dp[][]=new int[k+1][n];
+        for(int t=1;t<=k;t++)
         {
-            dp[0][i] = 0;
-        }
-        for(int i=0;i<=k;i++)
-        {
-            dp[i][0] = 0;
-        }
-        
-        for(int i=1;i<=k;i++)
-        {
-            int cn=Integer.MIN_VALUE;
-            for(int j=1;j<n;j++)
+            int max = Integer.MIN_VALUE;
+            for(int d=1;d<n;d++)
             {
-                cn = Math.max(cn, dp[i-1][j-1] - a[j-1]);
-                int ans = Integer.MIN_VALUE;
-                ans = Math.max(ans, a[j] + cn);
-                dp[i][j] = Math.max(ans, dp[i][j-1]);
+                max = Math.max(max, dp[t-1][d-1] - prices[d-1]);
+                dp[t][d] = Math.max(dp[t][d-1], max+prices[d]);
             }
         }
         return dp[k][n-1];
-        
     }
 }
